@@ -10,11 +10,18 @@ body {
     height: 80px;
     width: 80px;
 }
-.navbar{
-    margin: 30px;
-    background: #eae0e0;
-    box-shadow: 20px 20px 20px rgb(218, 213, 213);
+.navbar {
+    color: #13b152;
+    margin: 30px; /* Margin around the navbar */
+    background: #eae0e0; /* Background color */
+    box-shadow: 10px 10px 5px rgba(218, 213, 213, 0.5); /* Slightly softer shadow */
+    padding: 10px 20px; /* Padding inside the navbar */
+    border-radius: 8px; /* Rounded corners for a softer look */
 }
+.navbar .nav-link:hover {
+    color: #9a2727; /* Change color on hover */
+}
+
 .About-contener {
     max-height: 100vh; 
     overflow-y: auto;

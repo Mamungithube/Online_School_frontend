@@ -1,0 +1,41 @@
+.logo{
+    height: 80px;
+    width: 80px;
+}
+.navbar {
+    margin: 30px; /* Margin around the navbar */
+    background: #eae0e0; /* Background color */
+    box-shadow: 10px 10px 5px rgba(218, 213, 213, 0.5); /* Slightly softer shadow */
+    padding: 10px 20px; /* Padding inside the navbar */
+    border-radius: 8px; /* Rounded corners for a softer look */
+}
+.navbar .nav-link:hover {
+    color: #9a2727; /* Change color on hover */
+}
+
+h1, h2 {
+    color: #343a40; /* Dark color for headings */
+}
+
+.team-container {
+    display: flex; /* Enable Flexbox */
+    justify-content: center; /* Center content horizontally */
+    flex-wrap: wrap; /* Allow items to wrap onto multiple lines if necessary */
+}
+
+.team-member {
+    background-color: #767676; /* Background color for team members */
+    color: white; /* Text color */
+    padding: 20px; /* Padding inside team member boxes */
+    margin: 15px; /* Margin between team member boxes */
+    border-radius: 8px; /* Rounded corners for team member boxes */
+    text-align: center; /* Center text in team member boxes */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow effect for boxes */
+    flex: 1 1 200px; /* Flexible sizing with a minimum width */
+}
+
+.team-member img {
+    border-radius: 50%; /* Circular images for team members */
+    width: 100px; /* Fixed width for images */
+    height: 100px; /* Fixed height for images */
+}
