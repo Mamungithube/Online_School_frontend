@@ -1,0 +1,58 @@
+body {
+    background-image: url('./image file/header.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 50px;
+}
+
+.logo{
+    height: 80px;
+    width: 80px;
+}
+.navbar{
+    margin: 30px;
+    background: #eae0e0;
+    box-shadow: 20px 20px 20px rgb(218, 213, 213);
+}
+.About-contener {
+    max-height: 100vh; 
+    overflow-y: auto;
+    padding: 20px;
+}
+
+.About-contener .row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+row {
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+    height: 100vh;
+}
+
+.col {
+    flex: 1 0 30%;
+    margin: 0.5rem;
+}
+.card-body {
+    max-height: 150px;
+    overflow: hidden;
+}
+.row-cols-1 {
+    overflow-y: auto;
+}
+.custom-title {
+    color: #db9334; /* Text color */
+    text-decoration: underline;
+    text-decoration-color: #040e08; /* Optional: Different color for the underline */
+    font-weight: bold;
+    background-color: #fcfdfd; /* Light background color for the box */
+    padding: 15px 20px; /* Padding inside the box */
+    display: inline-block; /* Makes the background size fit the text */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow effect */
+    border-radius: 8px; /* Optional: Rounds the corners of the box */
+}
+
