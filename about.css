@@ -6,14 +6,86 @@ body{
     width: 80px;
 }
 .navbar {
-    margin: 30px; /* Margin around the navbar */
-    background: #eae0e0; /* Background color */
-    box-shadow: 10px 10px 5px rgba(218, 213, 213, 0.5); /* Slightly softer shadow */
-    padding: 10px 20px; /* Padding inside the navbar */
-    border-radius: 8px; /* Rounded corners for a softer look */
+    color: #13b152;
+    margin: 30px;
+    background: #eae0e0;
+    box-shadow: 10px 10px 5px rgba(133, 110, 110, 0.5);
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: background-color 0.5s, box-shadow 0.5s;
 }
+
+.navbar:hover {
+    background: rgb(207, 207, 212);
+    box-shadow: 12px 12px 7px rgba(255, 255, 255, 0.5);
+}
+
+.navbar .nav-link {
+    color: #707070;
+    transition: color 0.3s, transform 0.3s;
+}
+
 .navbar .nav-link:hover {
-    color: #9a2727; /* Change color on hover */
+    color: #9a2727;
+    transform: scale(1.05);
+}
+
+/* About section styles */
+.About-contener {
+    padding: 20px;
+}
+
+.About-contener .row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.col {
+    flex: 1 0 30%;
+    margin: 0.5rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+    overflow: hidden; /* Prevent overflow */
+}
+
+.col:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card-body {
+    max-height: 150px;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+
+.card-body:hover {
+    max-height: 300px;
+}
+
+.custom-title {
+    color: #db9334;
+    font-weight: bold;
+    background-color: #fcfdfd;
+    padding: 15px 20px;
+    display: inline-block;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.custom-title:hover {
+    color: #f9a825;
+    transform: scale(1.05);
+}
+
+/* Global overflow handling */
+body {
+    overflow-x: hidden; /* Prevent horizontal scrollbar */
+}
+
+.row, .col {
+    box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
 }
 
 h1, h2 {
