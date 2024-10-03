@@ -1,17 +1,45 @@
 body {
-    background-color: #a3abab;
+    background-color: #aab3b3;
     background-image: url('./image file/header.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    height: 50px;
+    height: 100px;
 }
 
 .logo {
     height: 80px;
     width: 80px;
 }
+.welcome {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20%;
+}
 
+.welcome h2 {
+    color: #2d3748;
+    font-weight: 700;
+    text-align: center;
+    padding: 10px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    animation: slideIn 2s ease-in-out forwards;
+    opacity: 0;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
 .navbar {
     color: #13b152;
     margin: 30px;
@@ -133,4 +161,34 @@ body {
     cursor: pointer;
     transition: background-color 0.3s;
     text-decoration: none;
+}
+/* Feature section - fixing image sizes */
+.feat-img {
+    width: 200px;
+    height: 120px;
+    object-fit: cover; /* Keeps the image's aspect ratio while fitting within the dimensions */
+    margin-bottom: 10px;
+}
+
+/* Gallery section - fixing image sizes */
+.gallery-card img {
+    width: 100%; /* Makes image span the entire card width */
+    height: 200px; /* Fixed height for all gallery images */
+    object-fit: cover; /* Ensures the image is not stretched */
+}
+
+/* Other general styling (optional) */
+.card {
+    border: none;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1, h5 {
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+}
+
+p {
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
 }
