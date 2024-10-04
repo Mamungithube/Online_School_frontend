@@ -6,16 +6,83 @@ body {
     background-position: center;
     height: 100px;
 }
-
+/* From Uiverse.io by vinodjangid07 */ 
+.Btn {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 45px;
+    height: 45px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition-duration: .3s;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199);
+    background-color: rgb(255, 65, 65);
+  }
+  
+  /* plus sign */
+  .sign {
+    width: 100%;
+    transition-duration: .3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .sign svg {
+    width: 17px;
+  }
+  
+  .sign svg path {
+    fill: white;
+  }
+  /* text */
+  .text {
+    position: absolute;
+    right: 0%;
+    width: 0%;
+    opacity: 0;
+    color: white;
+    font-size: 1.2em;
+    font-weight: 600;
+    transition-duration: .3s;
+  }
+  /* hover effect on button width */
+  .Btn:hover {
+    width: 125px;
+    border-radius: 40px;
+    transition-duration: .3s;
+  }
+  
+  .Btn:hover .sign {
+    width: 30%;
+    transition-duration: .3s;
+    padding-left: 20px;
+  }
+  /* hover effect button's text */
+  .Btn:hover .text {
+    opacity: 1;
+    width: 70%;
+    transition-duration: .3s;
+    padding-right: 10px;
+  }
+  /* button click effect*/
+  .Btn:active {
+    transform: translate(2px ,2px);
+  }
 .logo {
     height: 80px;
     width: 80px;
 }
+
 .welcome {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 20%;
+    height: 10%;
 }
 
 .welcome h2 {
@@ -35,11 +102,13 @@ body {
         transform: translateX(-100%);
         opacity: 0;
     }
+
     to {
         transform: translateX(0);
         opacity: 1;
     }
 }
+
 .navbar {
     color: #13b152;
     margin: 30px;
@@ -80,7 +149,8 @@ body {
     flex: 1 0 30%;
     margin: 0.5rem;
     transition: transform 0.3s, box-shadow 0.3s;
-    overflow: hidden; /* Prevent overflow */
+    overflow: hidden;
+    /* Prevent overflow */
 }
 
 .col:hover {
@@ -116,43 +186,57 @@ body {
 
 /* Global overflow handling */
 body {
-    overflow-x: hidden; /* Prevent horizontal scrollbar */
+    overflow-x: hidden;
+    /* Prevent horizontal scrollbar */
 }
 
-.row, .col {
-    box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
+.row,
+.col {
+    box-sizing: border-box;
+    /* Ensure padding and border are included in the element's total width and height */
 }
 
 /* course-releted css */
 .custom-title:hover {
-    color: #f9a825; /* Change color on hover */
-    transform: scale(1.05); /* Slightly enlarge title on hover */
+    color: #f9a825;
+    /* Change color on hover */
+    transform: scale(1.05);
+    /* Slightly enlarge title on hover */
 }
+
 .courses-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 1%; 
+    gap: 1%;
 }
 
 .course-card {
-    flex: 1 1 calc(25% - 1rem); /* 4 columns layout with a gap */
+    flex: 1 1 calc(25% - 1rem);
+    /* 4 columns layout with a gap */
     box-sizing: border-box;
     margin-bottom: 1rem;
-    transition: transform 0.5s, box-shadow 0.5s; /* Smooth transition for hover effects */
-    border-radius: 8px; /* Rounded corners */
+    transition: transform 0.5s, box-shadow 0.5s;
+    /* Smooth transition for hover effects */
+    border-radius: 8px;
+    /* Rounded corners */
 }
 
 .course-card:hover {
-    transform: translateY(-5px); /* Slightly lift the card on hover */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
+    transform: translateY(-5px);
+    /* Slightly lift the card on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Shadow effect */
 }
+
 .card-img-top {
     width: 150px;
-    height: 300px; /* Adjust height as needed */
+    height: 300px;
+    /* Adjust height as needed */
 
 
 }
-.enroll{
+
+.enroll {
     margin-top: 8%;
     background-color: rgb(151, 129, 87);
     color: white;
@@ -162,43 +246,35 @@ body {
     transition: background-color 0.3s;
     text-decoration: none;
 }
+
 /* Feature section - fixing image sizes */
 .feat-img {
     width: 200px;
     height: 120px;
-    object-fit: cover; /* Keeps the image's aspect ratio while fitting within the dimensions */
+    object-fit: cover;
+    /* Keeps the image's aspect ratio while fitting within the dimensions */
     margin-bottom: 10px;
 }
 
-/* Gallery section - fixing image sizes */
 .gallery-card img {
-    width: 100%; /* Makes image span the entire card width */
-    height: 260px; /* Fixed height for all gallery images */
-    object-fit: cover; /* Ensures the image is not stretched */
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
 }
 
-/* Other general styling (optional) */
 .card {
     border: none;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-h1, h5 {
-    font-family: 'Arial', sans-serif;
-    font-weight: bold;
-}
-
-p {
-    font-family: 'Arial', sans-serif;
-    font-size: 14px;
-}
 .gallery-card {
     position: relative;
     transition: transform 0.3s ease-in-out;
 }
 
 .gallery-card:hover {
-    transform: scale(1.05); /* Scale up slightly on hover */
+    transform: scale(1.05);
+    /* Scale up slightly on hover */
 }
 
 .overlay {
@@ -207,7 +283,8 @@ p {
 }
 
 .gallery-card:hover .overlay {
-    opacity: 1; /* Fade in the overlay on hover */
+    opacity: 1;
+    /* Fade in the overlay on hover */
 }
 
 .card-img-top {
@@ -215,5 +292,68 @@ p {
 }
 
 .gallery-card:hover .card-img-top {
-    transform: scale(1.1); /* Slightly zoom the image on hover */
+    transform: scale(1.1);
+    /* Slightly zoom the image on hover */
 }
+
+.more-button a {
+    text-decoration: none; /* Removes underline */
+    color: black;          /* Changes text color to black */
+}
+.parent-container {
+    display: flex;
+    justify-content: end; /* Horizontally center */
+    align-items: end;     
+    padding-right: 10%;
+}
+.more-button {
+    display: inline-block;
+    width: 150px;
+    height: 50px;
+    border-radius: 10px;
+    border: 1px solid #03045e;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.5s ease-in;
+    z-index: 1;
+   }
+   
+   .more-button::before,
+   .more-button::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 0;
+    height: 100%;
+    transform: skew(15deg);
+    transition: all 0.5s;
+    overflow: hidden;
+    z-index: -1;
+   }
+   
+   .more-button::before {
+    left: -10px;
+    background: #240046;
+   }
+   
+   .more-button::after {
+    right: -10px;
+    background: #5a189a;
+   }
+   
+   .more-button:hover::before,
+   .more-button:hover::after {
+    width: 58%;
+   }
+   
+   .more-button:hover span {
+    color: #e0aaff;
+    transition: 0.3s;
+   }
+   
+   .more-button a{
+    color: #03045e;
+    font-size: 18px;
+    transition: all 0.3s ease-in;
+    text-decoration: none; /* Removes underline */
+   }

@@ -49,39 +49,25 @@
                                 <a class="nav-link" href="Contect_us.html">Contact Us</a>
                             </li>
                         </ul>
-                        <form class="d-flex justify-content-evenly gap-2 me-3" role="search">
-                            <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-                            <button class="btn btn-light" type="button">
-                                <i class="fa-solid fa-magnifying-glass"></i>
-                            </button>
-
-                            <button class="btn btn-light btn-sm" type="button">Profile</button>
-                            <button class="btn btn-light" type="button">
-                                <i class="fas fa-sign-out-alt"></i>
-                            </button>
-
-                        </form>
                     </div>
                 </div>
             </nav>
         </header>
         <section>
-            <!-- <div class="header">
-                <h1 style="color: aliceblue ; text-align: center;"><u>Welcome back</u></h1>
-                <br>
-                <img class="img" src="image file/undraw_Login_re_4vu2.png" alt="Sign_up_img">
-            </div> -->
             <div class="form-box">
                 <div class="form-value">
-                    <form>
-                        <h2>Login Now</h2>
-                        <div class="inputbox"> <ion-icon name=""></ion-icon> <input type="" required>
+                    <form onsubmit="handleauthorized(event)" id="login-form">
+                        <h2>Welcome Back</h2>
+                        <div class="inputbox"> <ion-icon></ion-icon>
+                            <input id="username" type="text" name="username" required>
                             <label>username</label>
                         </div>
-                        <div class="inputbox"> <ion-icon name="lock-closed-outline"></ion-icon> <input type="password"
-                                required> <label>Password</label> </div>
-                        <div class="forget"> <label><input type="checkbox">Remember Me</label>
-                        </div> <button>Log In</button>
+                        <div class="inputbox"> <ion-icon></ion-icon> <input id="password" type="password"
+                                name="password" required> <label>Password</label> </div>
+                        <div class="forget">
+                            <p>create hard password </p>
+                        </div> 
+                        <button>Log In</button>
                         <div class="register">
                             <p>Don't have an account? <a href="registetion.html">Sign Up</a></p>
                         </div>
@@ -125,8 +111,9 @@
                 <small>&copy; 2024 Online School. Edited by Mamun, All Rights Reserved.</small>
             </p>
         </footer>
+        <script src="auth.js"></script>
     </body>
-    
+
 </body>
 
 </html>
