@@ -1,6 +1,6 @@
 // Function to fetch course data and display it
 const fetchAndDisplayCourses = () => {
-  fetch("https://online-school-k56h.onrender.com/Course/list//")
+  fetch("http://127.0.0.1:8000/Course/list//")
     .then((res) => {
       if (!res.ok) {
         throw new Error(`HTTP error! Status: ${res.status}`);
