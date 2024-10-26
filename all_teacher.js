@@ -18,9 +18,9 @@ async function fetchTeacherList() {
             teacherCard.innerHTML = `
             <img src="${teacher.image}" class="card-img-top">
             <h2>${teacher.user}</h2>
-                <p>Catagory: ${teacher.Catagory}</p>
-                <p>Teach Course: ${teacher.Course}</p>
-                <p>Meet Link: ${teacher.meet_link}</p>
+                <p><b>Catagory:</b> ${teacher.Catagory}</p>
+                <p><b>Teach Course:</b> ${teacher.Course}</p>
+                <p><b>Meet Link:</b> ${teacher.meet_link}</p>
             `;
             teacherList.appendChild(teacherCard);
         });
