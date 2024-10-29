@@ -1,7 +1,7 @@
 let coursesData = []; // Store courses globally for filtering
 
 const fetchAndDisplayCourses = () => {
-  fetch("http://127.0.0.1:8000/Course/list//")
+  fetch("http://127.0.0.1:8000/Course/list/")
     .then((res) => {
       if (!res.ok) {
         throw new Error(`HTTP error! Status: ${res.status}`);
@@ -9,8 +9,8 @@ const fetchAndDisplayCourses = () => {
       return res.json();
     })
     .then((data) => {
-      coursesData = data; 
-      displayCourses(coursesData); 
+      coursesData = data;
+      displayCourses(coursesData);
       console.log("Fetched Data:", coursesData);
     })
     .catch((err) => {
@@ -24,24 +24,25 @@ const displayCourses = (courses) => {
     console.error("Parent element not found");
     return;
   }
-  parent.innerHTML = ''; 
+  parent.innerHTML = '';
 
   courses.forEach(course => {
     const courseDiv = document.createElement("div");
     courseDiv.classList.add("course-card");
 
     courseDiv.innerHTML = `
-      <div class="card" style="height: 500px;">
+    <div class="card" style="height: 500px;">
         <img src="${course.image}" class="card-img-top" alt="${course.name}">
         <div class="card-body">
-          <h5 class="card-title">${course.name}</h5>
-          <p class="card-text">${course.description.slice(0, 200)}...</p>
+            <h5 class="card-title">${course.name}</h5>
+            <p class="card-text">${course.description.slice(0, 200)}...</p>
         </div>
         <div class="card-button d-flex justify-content-center">
-          <a class="enroll" href="${course.id}" target="_blank">Enroll Now</a>
+            <a class="enroll" href="Course_ditails.html?id=${course.id}" target="_blank">Enroll Now</a>
         </div>
-      </div>
-    `;
+    </div>
+`;
+
 
     parent.appendChild(courseDiv);
   });
@@ -52,8 +53,8 @@ const filterCourses = () => {
   const filterText = document.getElementById("courseFilter").value.toLowerCase();
 
   // Filter courses based on name or description match
-  const filteredCourses = coursesData.filter(course => 
-    course.name.toLowerCase().includes(filterText) || 
+  const filteredCourses = coursesData.filter(course =>
+    course.name.toLowerCase().includes(filterText) ||
     course.description.toLowerCase().includes(filterText)
   );
 
