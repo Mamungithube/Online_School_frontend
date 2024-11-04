@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
         console.error("No course ID found in URL");
         return;
     }
-    
+
     const token = localStorage.getItem("authToken");
     fetch(`http://127.0.0.1:8000/Course/Course/${courseId}/`, {
         headers: {
@@ -25,8 +25,8 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("course-duration").textContent = `${course.month} Month`;
         document.getElementById("course-fee").textContent = course.Course_fee;
         document.getElementById("course-description").textContent = course.description;
-        document.getElementById("course-image").src = course.image;
-        console.log(course);
+        document.getElementById("course-image").src = `http://127.0.0.1:8000${course.image}`;
+
     })
     .catch(error => console.error("Error fetching data:", error));
 });

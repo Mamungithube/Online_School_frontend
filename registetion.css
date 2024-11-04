@@ -145,3 +145,13 @@ body{
         width: 0;
     }
 }
+.login a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 700;
+}
+.login p {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+}
