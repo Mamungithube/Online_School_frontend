@@ -84,7 +84,7 @@ if (token) {
                   <h5><a class="nav-link" href="index.html" onclick="handleLogout()">Logout</a></h5>
                 </li>
                 <li class="">
-                  <h5><a class="nav-link">profile</a></h5>
+                  <h5><a class="nav-link" href="Teacher_deshboard.html">profile</a></h5>
                 </li>
 `
 }
