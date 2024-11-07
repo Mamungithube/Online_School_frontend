@@ -33,7 +33,7 @@ const handleRegister = (event) => {
 
 
 
-
+// login
 
 const handleLogin = (event) => {
   event.preventDefault();
@@ -74,41 +74,42 @@ const handleLogin = (event) => {
 };
 
 
-const navelement = document.getElementById('auth');
+// const navelement = document.getElementById('auth');
 
-const token = localStorage.getItem('authToken');
-console.log(token);
-if (token) {
-  navelement.innerHTML += `
-                <li class="">
-                  <h5><a class="nav-link" href="index.html" onclick="handleLogout(event)">Logout</a></h5>
-                </li>
-                <li class="">
-                  <h5><a class="nav-link" href="Teacher_deshboard.html">profile</a></h5>
-                </li>
-`
-}
-else {
-  navelement.innerHTML += `
-            <li class="login">
-              <h5><a class="nav-link" href="login.html">sign in</a></h5>
-            </li>
-            <li class="nav-item">
-                <h5><a class="nav-link" href="registetion.html">sign up</a></h5>
-            </li>
-`
-}
+// const token = localStorage.getItem('authToken');
+// console.log(token);
+// if (token) {
+//   navelement.innerHTML += `
+                // <li class="">
+                //   <h5><a class="nav-link" href="index.html" onclick="handleLogout(event)">Logout</a></h5>
+                // </li>
+                // <li class="">
+                //   <h5><a class="nav-link" href="Teacher_deshboard.html">profile</a></h5>
+                // </li>
+// `
+// }
+// else {
+//   navelement.innerHTML += `
+            // <li class="login">
+            //   <h5><a class="nav-link" href="login.html">sign in</a></h5>
+            // </li>
+            // <li class="nav-item">
+            //     <h5><a class="nav-link" href="registetion.html">sign up</a></h5>
+            // </li>
+// `
+// }
 
 
 const handleLogout = (event) => {
+  event.preventDefault();
   const token = localStorage.getItem("authToken");
-  console.log(token)
+  console.log(token);
 
   fetch("http://127.0.0.1:8000/Student/logout/", {
-    method: "POST",
+    method: "GET",
     headers: {
-      Authorization: `Token ${token}`,
       "Content-Type": "application/json",
+      Authorization: `Token ${token}`,
     },
   })
     .then((res) => res.json())
