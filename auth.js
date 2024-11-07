@@ -81,7 +81,7 @@ console.log(token);
 if (token) {
   navelement.innerHTML += `
                 <li class="">
-                  <h5><a class="nav-link" href="index.html" onclick="handleLogout()">Logout</a></h5>
+                  <h5><a class="nav-link" href="index.html" onclick="handleLogout(event)">Logout</a></h5>
                 </li>
                 <li class="">
                   <h5><a class="nav-link" href="Teacher_deshboard.html">profile</a></h5>
@@ -100,7 +100,7 @@ else {
 }
 
 
-const handleLogout = () => {
+const handleLogout = (event) => {
   const token = localStorage.getItem("authToken");
   console.log(token)
 
