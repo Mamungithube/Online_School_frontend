@@ -92,16 +92,6 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="profile_ditaile.html">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                    class="bi bi-person" viewBox="0 0 16 16">
-                                    <path
-                                        d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z" />
-                                </svg>
-                                <span class="ml-2">Profile Details</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link" href="change_password.html">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                     class="bi bi-lock" viewBox="0 0 16 16">
@@ -109,16 +99,6 @@
                                         d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2m3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2M5 8h6a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1" />
                                 </svg>
                                 <span class="ml-2">Change password</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                    class="bi bi-list" viewBox="0 0 16 16">
-                                    <path fill-rule="evenodd"
-                                        d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
-                                </svg>
-                                <span class="ml-2">Show Student List</span>
                             </a>
                         </li>
                         <li class="nav-item">
@@ -144,6 +124,11 @@
                                 <span class="ml-2">Add Course</span>
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">
+                                <span class="ml-2">Exit...></span>
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </nav>
@@ -163,8 +148,22 @@
             </div>
         </div>
     </div>
+    <div class="container profile-container" style="padding-left: 300px;">
+        <div class="row">
+            <div class="col-md-6">
+                <img src="image file/profiledata pic 2.svg" class="img-fluid " alt="Profile Image">
+            </div>
+            <div class="col-md-6 profile-info" style="background-color: #bbbdbe;">
+                <h1 id="username">Username</h1>
+                <h5><strong>Email:</strong> <span id="email">email@example.com</span></h5>
+                <h5><strong>First Name:</strong> <span id="first_name">First Name</span></h5>
+                <h5><strong>Last Name:</strong> <span id="last_name">Last Name</span></h5>
+            </div>
+        </div>
+    </div>
     <div class="px-5 pt-5" id="footer"></div>
     <script src="footer.js"></script>
+    <script src="auth.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>

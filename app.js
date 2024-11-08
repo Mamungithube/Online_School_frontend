@@ -38,7 +38,7 @@ const displayCourses = (courses) => {
             <p class="card-text">${course.description.slice(0, 200)}...</p>
         </div>
         <div class="card-button d-flex justify-content-center">
-            <a class="enroll" href="Course_ditails.html?id=${course.id}" target="_blank">Enroll Now</a>
+            <a class="enroll" href="Course_ditails.html?id=${course.id}">View Ditails</a>
         </div>
     </div>
 `;
