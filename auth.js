@@ -80,22 +80,22 @@ const handleLogin = (event) => {
 // console.log(token);
 // if (token) {
 //   navelement.innerHTML += `
-                // <li class="">
-                //   <h5><a class="nav-link" href="index.html" onclick="handleLogout(event)">Logout</a></h5>
-                // </li>
-                // <li class="">
-                //   <h5><a class="nav-link" href="Teacher_deshboard.html">profile</a></h5>
-                // </li>
+// <li class="">
+//   <h5><a class="nav-link" href="index.html" onclick="handleLogout(event)">Logout</a></h5>
+// </li>
+// <li class="">
+//   <h5><a class="nav-link" href="Teacher_deshboard.html">profile</a></h5>
+// </li>
 // `
 // }
 // else {
 //   navelement.innerHTML += `
-            // <li class="login">
-            //   <h5><a class="nav-link" href="login.html">sign in</a></h5>
-            // </li>
-            // <li class="nav-item">
-            //     <h5><a class="nav-link" href="registetion.html">sign up</a></h5>
-            // </li>
+// <li class="login">
+//   <h5><a class="nav-link" href="login.html">sign in</a></h5>
+// </li>
+// <li class="nav-item">
+//     <h5><a class="nav-link" href="registetion.html">sign up</a></h5>
+// </li>
 // `
 // }
 
@@ -128,8 +128,29 @@ const handleLogout = (event) => {
 // this is data profile
 
 
-
-fetch('http://127.0.0.1:8000/Student/api/profile/')
-  .then(response => response.json())
-  .then(data => console.log(data))
-  .catch(error => console.error('Error:', error));
+// Check for token in localStorage
+const token = localStorage.getItem('authToken');
+if (!token) {
+    console.log("not found token in local");
+} else {
+    fetch('http://127.0.0.1:8000/Student/api/profile/', {
+        method: 'GET',
+        headers: {
+            'Authorization': `Token ${token}`,
+            'Content-Type': 'application/json',
+        },
+    })
+    .then(response => {
+        if (!response.ok) throw new Error('Failed to fetch profile data');
+        return response.json();
+    })
+    .then(data => {
+        document.getElementById('username').innerText = data.username;
+        document.getElementById('email').innerText = data.email;
+        document.getElementById('first_name').innerText = data.first_name;
+        document.getElementById('last_name').innerText = data.last_name;
+    })
+    .catch(error => {
+        console.error('Error fetching user profile:', error);
+    });
+}

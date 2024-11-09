@@ -268,7 +268,9 @@
     const token = localStorage.getItem("authToken");
 
     // Add event listener to the Enroll button
+
     document.getElementById("enroll-now").addEventListener("click", () => {
+        console.log(JSON.stringify({ detail: courseId }));
         fetch("http://127.0.0.1:8000/Course/enrolled-courses/", {
             method: "POST",  // Make sure POST method is used
             headers: {

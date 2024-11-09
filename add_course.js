@@ -30,3 +30,7 @@ const addCourse = (event) => {
         alert(`Error adding course: ${error.message}`);
     });
 };
+
+
+
+

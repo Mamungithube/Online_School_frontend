@@ -28,9 +28,11 @@
         document.addEventListener("DOMContentLoaded", () => {
             const token = localStorage.getItem("authToken");
 
-            fetch("http://127.0.0.1:8000/enrolled-courses/", {
+            fetch("http://127.0.0.1:8000/Course/enrolled-courses/", {
+
                 headers: {
                     'Authorization': `Token ${token}`,
+
                 }
             })
                 .then(response => response.json())
@@ -44,6 +46,7 @@
 
                     enrollments.forEach(enrollment => {
                         const course = enrollment.course;
+                        console.log(course);
                         const row = document.createElement("tr");
                         row.innerHTML = `
                 <td>${course.name}</td>
