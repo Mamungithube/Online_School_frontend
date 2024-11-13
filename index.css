@@ -6,13 +6,15 @@ body {
     background-position: center;
     height: 100px;
 }
-.auth{
+
+.auth {
     display: flex;
     justify-content: center;
     gap: 25px;
     list-style-type: none;
 
 }
+
 /* From Uiverse.io by vinodjangid07 */
 .Btn {
     display: flex;
@@ -196,24 +198,16 @@ body {
     transform: scale(1.05);
 }
 
-/* Global overflow handling */
-body {
-    overflow-x: hidden;
-    /* Prevent horizontal scrollbar */
-}
+
 
 .row,
 .col {
     box-sizing: border-box;
-    /* Ensure padding and border are included in the element's total width and height */
 }
 
-/* course-releted css */
 .custom-title:hover {
     color: #f9a825;
-    /* Change color on hover */
     transform: scale(1.05);
-    /* Slightly enlarge title on hover */
 }
 
 .courses-container {
@@ -224,47 +218,41 @@ body {
 
 .course-card {
     flex: 1 1 calc(25% - 1rem);
-    /* 4 columns layout with a gap */
     box-sizing: border-box;
     margin-bottom: 1rem;
     transition: transform 0.5s, box-shadow 0.5s;
-    /* Smooth transition for hover effects */
     border-radius: 8px;
-    /* Rounded corners */
 }
 
 .course-card:hover {
     transform: translateY(-5px);
-    /* Slightly lift the card on hover */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    /* Shadow effect */
 }
 
 .card-img-top {
     width: 150px;
     height: 300px;
-    /* Adjust height as needed */
-
-
 }
 
 .enroll {
-    margin-top: 8%;
-    background-color: rgb(151, 129, 87);
+    background-color: #049898;
     color: white;
     padding: 8px 20px;
     border-radius: 9px;
     cursor: pointer;
     transition: background-color 0.3s;
     text-decoration: none;
+
+}
+.enroll:hover{
+    text-decoration: none;
+    color: rgb(247, 247, 255);
 }
 
-/* Feature section - fixing image sizes */
 .feat-img {
     width: 200px;
     height: 120px;
     object-fit: cover;
-    /* Keeps the image's aspect ratio while fitting within the dimensions */
     margin-bottom: 10px;
 }
 
@@ -310,9 +298,7 @@ body {
 
 .more-button a {
     text-decoration: none;
-    /* Removes underline */
     color: black;
-    /* Changes text color to black */
 }
 
 .parent-container {
@@ -377,45 +363,48 @@ body {
 }
 
 #reviews-carousel {
-    margin: 50px auto; /* Center the carousel */
-    width: 70%; /* Set a max width for the carousel */
-    border-radius: 10px; /* Rounded corners for the carousel */
-    overflow: hidden; /* Hide overflow to keep rounded corners */
+    margin: 50px auto;
+    width: 70%;
+    border-radius: 10px;
+    overflow: hidden;
 }
 
 .review-card {
-    background-color: #91a4b9; /* Blue background for cards */
+    background-color: #f4f4f4;
     border: none;
     border-radius: 10px;
-    transition: transform 0.2s, box-shadow 0.2s; /* Transition for scaling and shadow */
-    height: 300 px; /* Fixed height for cards */
+    transition: transform 0.2s, box-shadow 0.2s;
+    height: 230px;
     display: flex;
-    flex-direction: column; /* Align items vertically */
-    justify-content: center; /* Center content vertically */
-    padding: 10px; /* Add padding for better spacing */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Subtle shadow effect */
-    opacity: 0; /* Start invisible */
-    transform: translateY(20px); /* Start below */
-    animation: fadeInUp 0.5s forwards; /* Apply fade-in animation */
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    transform: translateY(20px);
+    animation: fadeInUp 0.5s forwards;
 }
 
 .review-card:hover {
-    transform: scale(1.05); /* Scale effect on hover */
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
+    transform: scale(1.05);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
 }
 
 .carousel-item {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 180px; /* Set height for carousel items */
-    transition: transform 0.5s ease-in-out; /* Transition effect for sliding */
+    height: 180px;
+    /* Set height for carousel items */
+    transition: transform 0.5s ease-in-out;
+    /* Transition effect for sliding */
 }
 
 /* Animation keyframes */
 @keyframes fadeInUp {
     to {
-        opacity: 1; /* End fully visible */
-        transform: translateY(0); /* Move to original position */
+        opacity: 1;
+        /* End fully visible */
+        transform: translateY(0);
+        /* Move to original position */
     }
 }

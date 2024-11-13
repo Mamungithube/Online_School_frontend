@@ -1,6 +1,6 @@
 async function fetchTeacherList() {
     try {
-        const response = await fetch("http://localhost:8000/Teacher/list/");
+        const response = await fetch("http://127.0.0.1:8000/Teacher/list/");
 
         if (!response.ok) {
             throw new Error(`Failed to fetch the teacher list: ${response.statusText}`);
@@ -20,6 +20,7 @@ async function fetchTeacherList() {
             <h2>${teacher.user}</h2>
                 <p><b>Catagory:</b> ${teacher.Catagory}</p>
                 <p><b>Teach Course:</b> ${teacher.Course}</p>
+                <p><b>Teach Course:</b> ${teacher.course_title}</p>
                 <p><b>Meet Link:</b> ${teacher.meet_link}</p>
             `;
             teacherList.appendChild(teacherCard);

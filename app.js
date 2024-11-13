@@ -35,7 +35,7 @@ const displayCourses = (courses) => {
         <img src="${course.image}" class="card-img-top" alt="${course.name}">
         <div class="card-body">
             <h5 class="card-title">${course.name}</h5>
-            <p class="card-text">${course.description.slice(0, 200)}...</p>
+            <p class="card-text">${course.description.slice(0, 180)}...</p>
         </div>
         <div class="card-button d-flex justify-content-center">
             <a class="enroll" href="Course_ditails.html?id=${course.id}">View Ditails</a>

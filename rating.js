@@ -29,10 +29,10 @@ function displayReviews(reviews) {
         reviewItem.innerHTML = `
             <div class="review-card shadow">
                 <div class="card-body text-center">
-                    <h5 class="card-title">${review.Course}</h5> <!-- Course Name -->
-                    <p class="card-text">${review.body}</p> <!-- Review Body -->
-                    <p class="card-text"><strong>Rating:</strong> ${review.rating}</p> 
-                    <p class="card-text"><em>Reviewed by: ${review.reviewer}</em></p>
+                    <u><h2 class="card-title ">Course Name : ${review.course_title}</h2> </u>
+                    <h4 class="card-text"><em>My Name is : ${review.reviewer_name}</em></h4>
+                    <h5 class="card-text">My Review is ${review.body}</h5> <!-- Review Body -->
+                    <h5 class="card-text"><strong>My Rating is : </strong> ${review.rating}</h5> 
                     <p class="card-text"><em>Reviewed by: ${review.created}</em></p>
                 </div>
             </div>
