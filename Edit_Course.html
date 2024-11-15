@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Course</title>
+    <style>
+        .courses-container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .course-card {
+            flex: 1 1 calc(25% - 1rem);
+            box-sizing: border-box;
+            margin-bottom: 50px;
+            transition: transform 0.5s, box-shadow 0.5s;
+            border-radius: 8px;
+        }
+
+        .card-img-top {
+            width: 300px;
+            height: 300px;
+        }
+
+        .card-button {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="filter d-flex justify-content-center">
+        <input type="text" id="courseFilter" placeholder="Filter by course name or description"
+            style="padding: 8px; margin-top: 10px; width: 80%; border-radius: 5px; border: 1px solid #ccc;">
+    </div>
+    <div class="container mt-5">
+        <div class="courses-container d-flex justify-content-center" id="courses">
+            <!-- Dynamic content will be injected here -->
+        </div>
+    </div>
+    <form id="editCourseForm" style="padding-left: 500px;padding-top: 100px;">
+        <div class="mb-3">
+            <label for="name" class="form-label">Course Name</label>
+            <input type="text" class="form-control" id="name" name="name" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="description" class="form-label">Course Description</label>
+            <textarea class="form-control" id="description" name="description" rows="4" required></textarea>
+        </div>
+
+        <div class="mb-3">
+            <label for="month" class="form-label">Course Duration (Months)</label>
+            <input type="number" class="form-control" id="month" name="month" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="Course_fee" class="form-label">Course Fee</label>
+            <input type="number" class="form-control" id="Course_fee" name="Course_fee" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="image" class="form-label">Course Image</label>
+            <input type="file" class="form-control-file" id="image" name="image" accept="image/*">
+        </div>
+
+        <!-- Save Button -->
+        <button type="button" id="saveButton" class="btn btn-success">Save Changes</button>
+    </form>
+
+
+    <script>
+        const fetchAndDisplayCourses = () => {
+            fetch("http://127.0.0.1:8000/Course/list/")
+                .then((res) => {
+                    if (!res.ok) {
+                        throw new Error(`HTTP error! Status: ${res.status}`);
+                    }
+                    return res.json();
+                })
+                .then((data) => {
+                    coursesData = data;
+                    displayCourses(coursesData);
+                    console.log("Fetched Data:", coursesData);
+                })
+                .catch((err) => {
+                    console.error("Fetch error:", err);
+                });
+        };
+
+        const displayCourses = (courses) => {
+            const parent = document.getElementById("courses");
+            parent.innerHTML = '';
+
+            courses.forEach((course) => {
+                const courseDiv = document.createElement("div");
+                courseDiv.classList.add("course-card");
+
+                courseDiv.innerHTML = `
+    <div class="card" style="height: 500px; padding-top : 50px;">
+        
+        <img src="${course.image}" class="card-img-top" alt="${course.name}">
+        <div class="card-body">
+            <h5 class="card-title">Course Name : ${course.name}</h5>
+            <h5 class="card-title">Course Duration : ${course.month} Month</h5>
+            <h5 class="card-title">Course Fee : ${course.Course_fee} Taka</h5>
+            <p class="card-text">Course Description : ${course.description.slice(0, 180)}...</p>
+        </div>
+        <div class="card-button">
+            <button type="submit" onclick="editCourse(${course.id})" class="btn btn-primary">Edit</button>
+            <button onclick="deleteCourse(${course.id})" class="btn btn-danger">Delete</button>
+        </div>
+    </div>
+        `;
+                parent.appendChild(courseDiv);
+            });
+        };
+
+        const filterCourses = () => {
+            const filterText = document.getElementById("courseFilter").value.toLowerCase();
+
+            // Filter courses based on name or description match
+            const filteredCourses = coursesData.filter(course =>
+                course.name.toLowerCase().includes(filterText) ||
+                course.description.toLowerCase().includes(filterText)
+            );
+
+            displayCourses(filteredCourses); // Display filtered courses
+        };
+
+        // Add an event listener to the input field to filter as you type
+        document.getElementById("courseFilter").addEventListener("input", filterCourses);
+
+        // Fetch and display courses when the page loads
+        document.addEventListener('DOMContentLoaded', fetchAndDisplayCourses);
+
+
+
+
+
+
+
+
+
+        // Delete Course Functionality
+        const deleteCourse = (courseId) => {
+            if (confirm("Are you sure you want to delete this course?")) {
+                fetch(`http://127.0.0.1:8000/Course/list/${courseId}/`, {
+                    method: "DELETE",
+                    headers: {
+                        // Add token if required
+                        // "Authorization": `Bearer ${token}`
+                    },
+                })
+                    .then((res) => {
+                        if (!res.ok) {
+                            throw new Error(`HTTP error! Status: ${res.status}`);
+                        }
+                        alert("Course deleted successfully");
+                        fetchAndDisplayCourses();
+                    })
+                    .catch((err) => {
+                        console.error("Error deleting course:", err);
+                        alert(`Error deleting course: ${err.message}`);
+                    });
+            }
+        };
+    </script>
+    <script src="add_course.js"></script>
+</body>
+
+</html>

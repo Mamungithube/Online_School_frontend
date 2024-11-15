@@ -127,8 +127,6 @@ const handleLogout = (event) => {
 
 // this is data profile
 
-
-// Check for token in localStorage
 const token = localStorage.getItem('authToken');
 if (!token) {
     console.log("not found token in local");
