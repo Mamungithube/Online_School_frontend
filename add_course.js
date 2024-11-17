@@ -27,7 +27,7 @@ const addCourse = (event) => {
         })
         .catch((error) => {
             console.error("Error:", error);
-            alert(`Error adding course: ${error.message}`);
+            alert(`Course added unsuccessfully`);
         });
 };
 
